@@ -7,7 +7,12 @@ describe('Calculator 100% coverage', () => {
   test.each`
     a      | op     | b      | expected
     ${2}   | ${'*'} | ${2}   | ${4}
+    ${2}   | ${'/'} | ${2}   | ${1}
+    ${2}   | ${'-'} | ${2}   | ${0}
+    ${2}   | ${'+'} | ${2}   | ${4}
     ${2}   | ${'&'} | ${2}   | ${'error'}
+    ${'&'}   | ${'+'} | ${2}   | ${'error'}
+    ${2}   | ${'+'} | ${'&'}   | ${'error'}
   `('$a $op $b = $expected', ({ a, op, b, expected }) => {
     if (expected === 'error') {
       expect(() => calculator(a, op, b)).toThrow();
