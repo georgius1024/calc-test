@@ -1,4 +1,4 @@
-# OTUS QA Engeneers are the best
+# OTUS QA Engineers are the best
 # Coverage example
 ### Setup
 `git clone git@github.com:georgius1024/calc-test.git`
