@@ -67,3 +67,8 @@ describe('Calculator parametric test', () => {
     });
   });
 });
+
+
+describe.each([1, 2, 3])('test', (a) => {
+  console.log(a);
+});
