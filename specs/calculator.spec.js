@@ -5,3 +5,4 @@ describe('Calculator 100% coverage', () => {
     expect(typeof calculator).toBe('function');
   });
 });
+

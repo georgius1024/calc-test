@@ -45,3 +45,25 @@ describe('Calculator parametric test', () => {
     }
   });
 });
+
+
+describe('Calculator parametric test', () => {
+  describe.each`
+    a      | op     | b      | expected
+    ${2}   | ${'*'} | ${2}   | ${4}
+    ${2}   | ${'+'} | ${2}   | ${4}
+    ${2}   | ${'-'} | ${2}   | ${0}
+    ${2}   | ${'/'} | ${2}   | ${1}
+    ${'?'} | ${'+'} | ${2}   | ${'error'}
+    ${2}   | ${'+'} | ${'?'} | ${'error'}
+    ${2}   | ${'&'} | ${2}   | ${'error'}
+  `('$a $op $b', ({ a, op, b, expected }) => {
+    test(`${a} ${op} ${b} = ${expected}`, () => {
+      if (expected === 'error') {
+        expect(() => calculator(a, op, b)).toThrow();
+      } else {
+        expect(calculator(a, op, b)).toBe(expected);
+      }
+    });
+  });
+});
