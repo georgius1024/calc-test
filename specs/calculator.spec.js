@@ -6,6 +6,3 @@ describe('Calculator 100% coverage', () => {
   });
 });
 
-describe.each([1, 2, 3])('test', (a) => {
-  console.log(a);
-});
