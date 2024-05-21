@@ -6,3 +6,6 @@
 
 ### Run specs
 `npm run test`
+
+
+Propposed feature
